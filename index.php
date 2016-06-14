@@ -80,10 +80,10 @@
 
 		-->
 		</style>
-		<script type="text/javascript" src="jquery-1.10.min.js"></script>
-		<script type="text/javascript" src="config.js"></script>
-		<script type="text/javascript" src="routes.js"></script>
-		<script type="text/javascript" src="app.js"></script>
+		<script type="text/javascript" src="public/js/vendor/jquery-1.10.min.js"></script>
+		<script type="text/javascript" src="public/js/config.js"></script>
+		<script type="text/javascript" src="public/js/routes.js"></script>
+		<script type="text/javascript" src="public/js/app.js"></script>
 	</head>
 	<body data-pjax-container="#frame">
 		<div class="container">

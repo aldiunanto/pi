@@ -1,6 +1,6 @@
 <?php
 
-require_once('connection.php');
+require_once('../configs/connection.php');
 
 $query = $pdo->prepare("
 	UPDATE contact SET

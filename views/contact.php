@@ -1,4 +1,4 @@
-<?php require_once('../connection.php') ?>
+<?php require_once('../app/configs/connection.php') ?>
 
 <h4 class="caption">Contact List</h4>
 <span class="info" data-pjax-message="added">Successfully added!</span>

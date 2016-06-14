@@ -1,7 +1,7 @@
 <?php
 	
 	session_start();
-	require_once('../connection.php');
+	require_once('../app/configs/connection.php');
 
 	$statement = $pdo->prepare('SELECT * FROM contact WHERE cont_id = ' . $_SESSION['params']['id']);
 	$statement->execute();

@@ -1,5 +1,5 @@
 CONFIG = {
 
-	baseUrl	: 'http://aldiunanto/studycase/pushstate/'
+	baseUrl	: 'http://aldiunanto/studycase/pi/'
 
 }
