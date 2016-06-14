@@ -54,7 +54,7 @@ APP = {
 				e.preventDefault();
 				var data = JSON.parse(APP.Libs._ajax({
 					method	: $(this).attr('method'),
-					url 	: $(this).attr('action'),
+					url 	: CONFIG.baseUrl + 'app/actions/' + $(this).attr('action'),
 					data 	: $(this).serialize()
 				}));
 
@@ -100,7 +100,7 @@ APP = {
 
 				APP.Libs._ajax({
 					method	: 'post',
-					url 	: CONFIG.baseUrl + 'pjaxParamsControl.php',
+					url 	: CONFIG.baseUrl + 'system/pjaxParamsControl.php',
 					data 	: obj
 				});
 
@@ -110,7 +110,7 @@ APP = {
 		_handleDirectUrl: function(toUrl){
 			var data = JSON.parse(APP.Libs._ajax({
 				method	: 'post',
-				url 	: CONFIG.baseUrl + toUrl,
+				url 	: CONFIG.baseUrl + 'app/directs/' + toUrl,
 				data 	: null
 			}));
 
