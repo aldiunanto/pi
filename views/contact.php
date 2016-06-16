@@ -1,9 +1,9 @@
 <?php require_once('../app/configs/connection.php') ?>
 
 <h4 class="caption">Contact List</h4>
-<span class="info" data-pjax-message="added">Successfully added!</span>
-<span class="info" data-pjax-message="updated">Successfully updated!</span>
-<span class="info" data-pjax-message="deleted">Successfully deleted!</span>
+<span class="info" data-crudizy-message="added">Successfully added!</span>
+<span class="info" data-crudizy-message="updated">Successfully updated!</span>
+<span class="info" data-crudizy-message="deleted">Successfully deleted!</span>
 
 <a href="#/contact/add" class="btn btn-add">&plus; Add Contact</a>
 <table class="data-list">
@@ -31,8 +31,8 @@
 			<td><?php echo $row['cont_email'] ?></td>
 			<td><?php echo $row['cont_phone'] ?></td>
 			<td>
-				<a href="#/contact/edit" data-pjax-params="id:<?php echo $row['cont_id'] ?>">Edit</a> | 
-				<a href="#/contact/delete" data-pjax-params="id:<?php echo $row['cont_id'] ?>,secondparam:aldi">Delete</a>
+				<a href="#/contact/edit" data-crudizy-params="id:<?php echo $row['cont_id'] ?>">Edit</a> | 
+				<a href="#/contact/delete" data-crudizy-params="id:<?php echo $row['cont_id'] ?>,secondparam:aldi">Delete</a>
 			</td>
 		</tr>
 

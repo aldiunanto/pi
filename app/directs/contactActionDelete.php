@@ -10,7 +10,7 @@ $query = $pdo->prepare("
 $query->bindParam(':cont_id', $_SESSION['params']['id']);
 $query->execute();
 
-echo json_encode(['data-pjax-feed' => [
+echo json_encode(['data-crudizy-feed' => [
 	'redirect'	=> 'contact',
 	'message'	=> 'deleted'
 ]]);

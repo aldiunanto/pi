@@ -8,7 +8,7 @@
 		<script type="text/javascript" src="public/js/routes.js"></script>
 		<script type="text/javascript" src="public/js/app.js"></script>
 	</head>
-	<body data-pjax-container="#frame">
+	<body data-crudizy-container="#frame">
 		<div class="container">
 			<table>
 				<tr>

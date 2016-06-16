@@ -9,7 +9,7 @@ APP = {
 			if(!source.url && !source.title && source.directUrl){
 				APP.Main._handleDirectUrl(source.directUrl);
 			}else{
-				$($('body').attr('data-pjax-container')).load(source.url, function(){
+				$($('body').attr('data-crudizy-container')).load(source.url, function(){
 					APP.Main._initializeFlashData();
 				});
 
@@ -34,7 +34,7 @@ APP = {
 			this._pushState();
 			this._backAndForward();
 			this._initializeForm();
-			this._pjaxParams();
+			this._crudizyParams();
 		},
 		_checkAndLoad: function(currRoute){
 			if(typeof currRoute !== 'undefined'){
@@ -50,7 +50,7 @@ APP = {
 			this._checkAndLoad(toLoad);
 		},
 		_initializeForm: function(){
-			$('body').on('submit', 'form[data-pjax-form="enable"]', function(e){
+			$('body').on('submit', 'form[data-crudizy-form="enable"]', function(e){
 				e.preventDefault();
 				var data = JSON.parse(APP.Libs._ajax({
 					method	: $(this).attr('method'),
@@ -58,18 +58,18 @@ APP = {
 					data 	: $(this).serialize()
 				}));
 
-				if(data['data-pjax-feed'].message){
-					localStorage.setItem(data['data-pjax-feed'].message, true);
+				if(data['data-crudizy-feed'].message){
+					localStorage.setItem(data['data-crudizy-feed'].message, true);
 				}
-				if(data['data-pjax-feed'].redirect){
-					window.location.href = CONFIG.baseUrl + '#/' + data['data-pjax-feed'].redirect;
+				if(data['data-crudizy-feed'].redirect){
+					window.location.href = CONFIG.baseUrl + '#/' + data['data-crudizy-feed'].redirect;
 				}
 			});
 		},
 		_initializeFlashData: function(){
-			$('[data-pjax-message]').hide();
-			$('[data-pjax-message]').each(function(){
-				var curr = $(this).attr('data-pjax-message');
+			$('[data-crudizy-message]').hide();
+			$('[data-crudizy-message]').each(function(){
+				var curr = $(this).attr('data-crudizy-message');
 				if(localStorage.getItem(curr)){
 					$(this).show();
 					localStorage.removeItem(curr);
@@ -88,19 +88,19 @@ APP = {
 				APP.Main._initializeURL();
 			};
 		},
-		_pjaxParams: function(){
-			$('body').on('click', '[data-pjax-params]', function(e){
+		_crudizyParams: function(){
+			$('body').on('click', '[data-crudizy-params]', function(e){
 				e.preventDefault();
 				var obj =  {};
 
-				$(this).attr('data-pjax-params').split(',').forEach(function(sp){
+				$(this).attr('data-crudizy-params').split(',').forEach(function(sp){
 					var cur = sp.split(':');
 					obj[cur[0]] = cur[1];
 				});
 
 				APP.Libs._ajax({
 					method	: 'post',
-					url 	: CONFIG.baseUrl + 'system/pjaxParamsControl.php',
+					url 	: CONFIG.baseUrl + 'system/crudizyParamsControl.php',
 					data 	: obj
 				});
 
@@ -114,11 +114,11 @@ APP = {
 				data 	: null
 			}));
 
-			if(data['data-pjax-feed'].message){
-				localStorage.setItem(data['data-pjax-feed'].message, true);
+			if(data['data-crudizy-feed'].message){
+				localStorage.setItem(data['data-crudizy-feed'].message, true);
 			}
-			if(data['data-pjax-feed'].redirect){
-				window.location.href = CONFIG.baseUrl + '#/' + data['data-pjax-feed'].redirect;
+			if(data['data-crudizy-feed'].redirect){
+				window.location.href = CONFIG.baseUrl + '#/' + data['data-crudizy-feed'].redirect;
 			}
 		}
 

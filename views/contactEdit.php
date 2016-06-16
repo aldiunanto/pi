@@ -12,7 +12,7 @@
 <h4 class="caption">Edit Contact</h4>
 <a href="#/contact" class="btn btn-add">&laquo; Back to the list</a>
 
-<form action="contactActionUpdate.php" method="post" data-pjax-form="enable">
+<form action="contactActionUpdate.php" method="post" data-crudizy-form="enable">
 <input type="hidden" name="cont_id" value="<?php echo $row['cont_id'] ?>" />
 	<table>
 		<tr>

@@ -16,7 +16,7 @@ $query->bindParam(':cont_email', $_POST['cont_email']);
 $query->bindParam(':cont_phone', $_POST['cont_phone']);
 $query->execute();
 
-echo json_encode(['data-pjax-feed' => [
+echo json_encode(['data-crudizy-feed' => [
 	'redirect'	=> 'contact',
 	'message'	=> 'updated'
 ]]);
