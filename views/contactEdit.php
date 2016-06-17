@@ -1,9 +1,9 @@
 <?php
 	
 	session_start();
-	require_once('../app/configs/connection.php');
+	require_once('../system/connection.php');
 
-	$statement = $pdo->prepare('SELECT * FROM contact WHERE cont_id = ' . $_SESSION['params']['id']);
+	$statement = $conn->prepare('SELECT * FROM contact WHERE cont_id = ' . $_SESSION['params']['id']);
 	$statement->execute();
 	
 	$row = $statement->fetch();
@@ -12,7 +12,7 @@
 <h4 class="caption">Edit Contact</h4>
 <a href="#/contact" class="btn btn-add">&laquo; Back to the list</a>
 
-<form action="contactActionUpdate.php" method="post" data-crudizy-form="enable">
+<form action="contacts.save" method="post" data-crudizy-form="enable">
 <input type="hidden" name="cont_id" value="<?php echo $row['cont_id'] ?>" />
 	<table>
 		<tr>

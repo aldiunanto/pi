@@ -1,4 +1,4 @@
-<?php require_once('../app/configs/connection.php') ?>
+<?php require_once('../system/connection.php') ?>
 
 <h4 class="caption">Contact List</h4>
 <span class="info" data-crudizy-message="added">Successfully added!</span>
@@ -20,7 +20,7 @@
 		<?php
 
 			$x = 1;
-			$get = $pdo->query('SELECT * FROM contact');
+			$get = $conn->query('SELECT * FROM contact');
 			foreach($get->fetchAll() as $row) :
 
 		?>

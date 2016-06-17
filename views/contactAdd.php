@@ -1,6 +1,6 @@
 <h4 class="caption">New Contact</h4>
 <a href="#/contact" class="btn btn-add">&laquo; Back to the list</a>
-<form action="contactAction.php" method="post" data-crudizy-form="enable">
+<form action="contacts.store" method="post" data-crudizy-form="enable">
 	<table>
 		<tr>
 			<td class="field">Name</td>
