@@ -54,8 +54,8 @@ APP = {
 				e.preventDefault();
 				var data = JSON.parse(APP.Libs._ajax({
 					method	: $(this).attr('method'),
-					url 	: CONFIG.baseUrl + 'app/actions/' + $(this).attr('action'),
-					data 	: $(this).serialize()
+					url 	: CONFIG.baseUrl + 'system/controllerHandler.php',
+					data 	: $(this).serialize() + '&_action=' + $(this).attr('action')
 				}));
 
 				if(data['data-crudizy-feed'].message){
@@ -108,18 +108,20 @@ APP = {
 			});
 		},
 		_handleDirectUrl: function(toUrl){
-			var data = JSON.parse(APP.Libs._ajax({
+			var data = APP.Libs._ajax({
 				method	: 'post',
 				url 	: CONFIG.baseUrl + 'app/directs/' + toUrl,
 				data 	: null
-			}));
+			});
 
-			if(data['data-crudizy-feed'].message){
+			console.log(data);
+
+			/*if(data['data-crudizy-feed'].message){
 				localStorage.setItem(data['data-crudizy-feed'].message, true);
 			}
 			if(data['data-crudizy-feed'].redirect){
 				window.location.href = CONFIG.baseUrl + '#/' + data['data-crudizy-feed'].redirect;
-			}
+			}*/
 		}
 
 	}
