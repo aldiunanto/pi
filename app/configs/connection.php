@@ -1,11 +1,10 @@
 <?php
 
-$dsn	= 'mysql:dbname=studycase;host=127.0.0.1';
-$user 	= 'root';
-$pass	= null;
+return [
 
-try{
-	$pdo = new PDO($dsn, $user, $pass);
-}catch (PDOException $e){
-	echo 'Connection failed: ' . $e->getMessage();
-}
+	'host'		=> 'localhost',
+	'user'		=> 'root',
+	'password'	=> null,
+	'database'	=> 'studycase'
+
+];
