@@ -36,5 +36,18 @@ class contacts {
 			'message'	=> 'updated'
 		]]);
 	}
+	public function destroy(){
+		$query = $this->db->prepare("
+			DELETE FROM contact WHERE cont_id = :cont_id
+		");
+
+		$query->bindParam(':cont_id', $_SESSION['params']['id']);
+		$query->execute();
+
+		echo json_encode(['data-crudizy-feed' => [
+			'redirect'	=> 'contact',
+			'message'	=> 'deleted'
+		]]);
+	}
 
 }

@@ -110,8 +110,8 @@ APP = {
 		_handleDirectUrl: function(toUrl){
 			var data = JSON.parse(APP.Libs._ajax({
 				method	: 'post',
-				url 	: CONFIG.baseUrl + 'app/directs/' + toUrl,
-				data 	: null
+				url 	: CONFIG.baseUrl + 'system/controllerHandler.php',
+				data 	: '_action=' + toUrl
 			}));
 
 			if(data['data-crudizy-feed'].message){

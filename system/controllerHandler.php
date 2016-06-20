@@ -4,7 +4,7 @@ session_start();
 require_once('connection.php');
 
 $param = explode('.', $_POST['_action'] ?: $_GET['_action']);
-require_once('../app/controllers/' . $param[0] . '.php');
+require_once(dirname(__DIR__) . '/app/controllers/' . $param[0] . '.php');
 
 $classPath	= 'app\controllers\\' . $param[0];
 $controller = new $classPath($conn);

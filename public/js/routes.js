@@ -23,7 +23,7 @@ ROUTES = {
 			url		: 'views/contactEdit.php'
 		},
 		'contact/delete' : {
-			directUrl : 'contactActionDelete.php'
+			directUrl : 'contacts.destroy'
 		},
 	sitemap	: {
 		title 	: 'Sitemap',
