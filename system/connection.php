@@ -1,6 +1,6 @@
 <?php
 
-$config = require_once('../app/configs/connection.php');
+$config = require_once(dirname(__DIR__) . '/app/configs/connection.php');
 $dsn	= 'mysql:dbname=' . $config['database'] . ';host=' . $config['host'];
 
 try{

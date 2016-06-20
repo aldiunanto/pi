@@ -108,20 +108,18 @@ APP = {
 			});
 		},
 		_handleDirectUrl: function(toUrl){
-			var data = APP.Libs._ajax({
+			var data = JSON.parse(APP.Libs._ajax({
 				method	: 'post',
 				url 	: CONFIG.baseUrl + 'app/directs/' + toUrl,
 				data 	: null
-			});
+			}));
 
-			console.log(data);
-
-			/*if(data['data-crudizy-feed'].message){
+			if(data['data-crudizy-feed'].message){
 				localStorage.setItem(data['data-crudizy-feed'].message, true);
 			}
 			if(data['data-crudizy-feed'].redirect){
 				window.location.href = CONFIG.baseUrl + '#/' + data['data-crudizy-feed'].redirect;
-			}*/
+			}
 		}
 
 	}

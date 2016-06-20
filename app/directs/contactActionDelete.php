@@ -1,9 +1,9 @@
 <?php
 
 session_start();
-require_once('../configs/connection.php');
+require_once('../../system/connection.php');
 
-$query = $pdo->prepare("
+$query = $conn->prepare("
 	DELETE FROM contact WHERE cont_id = :cont_id
 ");
 
